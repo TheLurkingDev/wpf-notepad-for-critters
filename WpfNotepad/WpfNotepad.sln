@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfNotepad", "WpfNotepad.csproj", "{007356B9-4DCF-409E-A59C-D8DCC2C9283E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{007356B9-4DCF-409E-A59C-D8DCC2C9283E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007356B9-4DCF-409E-A59C-D8DCC2C9283E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007356B9-4DCF-409E-A59C-D8DCC2C9283E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007356B9-4DCF-409E-A59C-D8DCC2C9283E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A62E70CD-D51B-45B7-8777-76A9C6008FD9}
+	EndGlobalSection
+EndGlobal
