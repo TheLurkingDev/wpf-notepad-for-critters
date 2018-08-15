@@ -6,29 +6,29 @@ namespace WpfNotepad.Models
 {
     public class DocumentModel : ObservableObject
     {
-        public DocumentModel()
+        private TextBox _editorTextBox;
+        private TextBox EditorTextBox
         {
-            
+            get
+            {
+                if(_editorTextBox == null)
+                {
+                    _editorTextBox = (TextBox)Application.Current.MainWindow.FindName("EditorTextBox");
+                }
+
+                return _editorTextBox;
+            }
+            set { _editorTextBox = value; }
         }
 
-        private TextBox _editorTextBox { get; set; }
-        
+
         public string SelectedText
         {            
             get
             {
-                if(_editorTextBox != null)
-                {
-                    return _editorTextBox.SelectedText;
-                }
-                else
-                {
-                    _editorTextBox = (TextBox)Application.Current.MainWindow.FindName("EditorTextBox");
-                    return _editorTextBox.SelectedText;
-                }
-                
+                return EditorTextBox.SelectedText;                                
             }
-            set { _editorTextBox.SelectedText = value; }
+            set { EditorTextBox.SelectedText = value; }
         }
 
 

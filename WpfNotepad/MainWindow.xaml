@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfNotepad"
         xmlns:viewmodels="clr-namespace:WpfNotepad.ViewModels"
         mc:Ignorable="d"
-        Title="WpfNotepad" Height="400" Width="400">
+        Title="WpfNotepad" Height="400" Width="600">
     <Window.DataContext>
         <viewmodels:MainViewModel/>        
     </Window.DataContext>
@@ -34,7 +34,7 @@
                        DataContext="{Binding File.Document}"
                        Text="{Binding FilePath}"/>
             <TextBox DockPanel.Dock="Top"
-                     Name="EditorTextBox"
+                     Name="EditorTextBox"                     
                      VerticalScrollBarVisibility="Visible"
                      DataContext="{Binding Editor}"
                      FontFamily="{Binding Format.Family}"
@@ -44,7 +44,7 @@
                      TextWrapping="{Binding Format.Wrap}"
                      AcceptsReturn="True"
                      AcceptsTab="True"                     
-                     Text="{Binding Document.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                     Text="{Binding Document.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextChanged="EditorTextBox_TextChanged"/>
         </DockPanel>
     </DockPanel>
 </Window>
