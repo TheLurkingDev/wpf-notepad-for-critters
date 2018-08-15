@@ -1,9 +1,37 @@
 ﻿using System;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace WpfNotepad.Models
 {
     public class DocumentModel : ObservableObject
     {
+        public DocumentModel()
+        {
+            
+        }
+
+        private TextBox _editorTextBox { get; set; }
+        
+        public string SelectedText
+        {            
+            get
+            {
+                if(_editorTextBox != null)
+                {
+                    return _editorTextBox.SelectedText;
+                }
+                else
+                {
+                    _editorTextBox = (TextBox)Application.Current.MainWindow.FindName("EditorTextBox");
+                    return _editorTextBox.SelectedText;
+                }
+                
+            }
+            set { _editorTextBox.SelectedText = value; }
+        }
+
+
         private string _text;
         public string Text
         {
