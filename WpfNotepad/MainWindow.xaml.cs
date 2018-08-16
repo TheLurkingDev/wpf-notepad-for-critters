@@ -40,6 +40,12 @@ namespace WpfNotepad
 
                     var lineUnder70 = textLines[count].Substring(0, 70);
                     var lineOverflow = textLines[count].Substring(70, textLines[count].Length - 70);
+                    var lastWord = lineUnder70.Substring(lineUnder70.LastIndexOf(" "));
+                    lineUnder70 = lineUnder70.Remove(lineUnder70.LastIndexOf(" "));
+                    lineOverflow = lastWord + lineOverflow;
+                    lineUnder70 = lineUnder70.Trim();
+                    lineOverflow = lineOverflow.Trim();
+                    lastWord = lastWord.Trim();
                     if(isQuote)
                     {
                         lineOverflow = "> " + lineOverflow;
