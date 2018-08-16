@@ -26,24 +26,6 @@ namespace WpfNotepad.Models
             set { OnPropertyChanged(ref _family, value); }
         }
 
-        private TextWrapping _wrap;
-        public TextWrapping Wrap
-        {
-            get { return _wrap; }
-            set
-            {
-                OnPropertyChanged(ref _wrap, value);
-                IsWrapped = value == TextWrapping.Wrap ? true : false;
-            }
-        }
-
-        private bool _isWrapped;
-        public bool IsWrapped
-        {
-            get { return _isWrapped; }
-            set { OnPropertyChanged(ref _isWrapped, value); }
-        }
-
         private double _size;
         public double Size
         {
