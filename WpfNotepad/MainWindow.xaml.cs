@@ -27,12 +27,23 @@ namespace WpfNotepad
 
             for (int count = 0; count < textLines.Count; count++)
             {
-                
-
                 if (textLines[count].Length > 70)
                 {
+                    bool isQuote = textLines[count].Contains(">");
+
+                    if (isQuote)
+                    {
+                        textLines[count] = textLines[count].Remove(textLines[count].IndexOf(">"), 1);
+                        var temp = textLines[count];
+                        textLines[count] = "> " + temp;
+                    }
+
                     var lineUnder70 = textLines[count].Substring(0, 70);
                     var lineOverflow = textLines[count].Substring(70, textLines[count].Length - 70);
+                    if(isQuote)
+                    {
+                        lineOverflow = "> " + lineOverflow;
+                    }
                     textLines[count] = lineUnder70;
 
                     if(textLines.Count == count + 1)
