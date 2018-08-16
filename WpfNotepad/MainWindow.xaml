@@ -19,8 +19,8 @@
                     <MenuItem Header="Save" Command="{Binding SaveCommand}"/>
                     <MenuItem Header="Save As..." Command="{Binding SaveAsCommand}"/>
                 </MenuItem>
-                <MenuItem Header="Format" DataContext="{Binding Editor}">
-                    <MenuItem Header="Set Quote" Command="{Binding QuoteCommand}"/>                    
+                <MenuItem Header="Edit" DataContext="{Binding Editor}">
+                    <MenuItem Header="_Quote" Command="{Binding QuoteCommand}" InputGestureText="Ctrl+Q"/>                    
                     <Separator />
                     <MenuItem Header="Document Format" Command="{Binding FormatCommand}"/>
                 </MenuItem>
@@ -47,4 +47,7 @@
                      Text="{Binding Document.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextChanged="EditorTextBox_TextChanged"/>
         </DockPanel>
     </DockPanel>
+    <Window.InputBindings>
+        <KeyBinding Key="Q" Modifiers="Ctrl" Command="{Binding Editor.QuoteCommand}"/>
+    </Window.InputBindings>
 </Window>
